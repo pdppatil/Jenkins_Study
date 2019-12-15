@@ -2,7 +2,7 @@
 <project name ="Demo" default="run">
 
 <target name ="clean">
-<delete dir ="build"/>
+<delete dir="build"/>
 </target>
 
 <target name ="create" depends="clean">
@@ -16,7 +16,7 @@
 
 <target name="package" depends="compile">
 <mkdir dir ="build/jar"/>
-<jar basedir="build/classes" destfile="build/jar/{ant.project.name}.jar">
+<jar basedir="build/classes" destfile="build/jar/${ant.project.name}.jar">
 <manifest>
 <attribute name="Main-Class" value="Hello"/>
 </manifest>
@@ -24,7 +24,7 @@
 </target>
 
 <target name="run" depends="package">
-<java jar="build/jar/{ant.project.name}.jar" fork="true"/>
+<java jar="build/jar/${ant.project.name}.jar" fork="true"/>
 </target>
 
 </project>
